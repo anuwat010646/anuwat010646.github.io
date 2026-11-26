@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Anuwat Nakwibool</title>
+  <meta name="description" content="พอร์ตโฟลิโอของอนุวัตร นาควิบูลย์ นักศึกษาวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยศรีปทุม งาน IoT, Embedded และ AI">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ TOOLBAR (logic-analyzer style) ============ -->
+<header class="toolbar">
+  <div class="tb-left">
+    <span class="rec" aria-hidden="true"></span>
+    <span class="tb-brand">ANUWAT<span>.</span>N</span>
+    <span class="tb-meta">1 MS/s · 4 CH · TRIG ↓ TX</span>
+  </div>
+  <nav class="tb-nav" aria-label="เมนู">
+    <a href="#ch1" style="--c:var(--ch1)"><i></i>CH1 <span>Bonsai</span></a>
+    <a href="#ch2" style="--c:var(--ch2)"><i></i>CH2 <span>Pharmacy</span></a>
+    <a href="#ch3" style="--c:var(--ch3)"><i></i>CH3 <span>FitAI</span></a>
+    <a href="#bus"><span>การศึกษา</span></a>
+    <a href="#pinout"><span>ทักษะ</span></a>
+    <a href="#tty"><span>ติดต่อ</span></a>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ HERO: capture window ============ -->
+  <section class="hero" aria-labelledby="name">
+    <div class="hero-id">
+      <img class="avatar" src="../images/profile.webp" alt="อนุวัตร นาควิบูลย์" width="220" height="259">
+      <div class="id-text">
+        <p class="kicker">Computer Engineering · Sripatum University</p>
+        <h1 id="name"><span class="glitch" data-text="ANUWAT">ANUWAT</span><br>NAKWIBOOL</h1>
+        <p class="thai-name">อนุวัตร นาควิบูลย์</p>
+      </div>
+    </div>
+
+    <div class="capture">
+      <div class="cap-head">
+        <span>capture_001.sal</span>
+        <span id="cursorRead" class="mono">t = 0.000 ms</span>
+      </div>
+      <canvas id="scope" aria-label="กราฟสัญญาณดิจิทัล 4 ช่อง ช่อง TX ส่งชื่อ ANUWAT ผ่าน UART" role="img"></canvas>
+      <div class="cap-foot">
+        <span><b style="color:var(--ch1)">■</b> CH1 UART TX · 8N1 · decoded “ANUWAT”</span>
+        <span>ลากเมาส์บนกราฟเพื่อวัดเวลา</span>
+      </div>
+    </div>
+
+    <div class="hero-about">
+      <p>นักศึกษาวิศวกรรมคอมพิวเตอร์ที่ชอบให้โค้ด<strong>ขยับของจริง</strong> ทำงานตั้งแต่ออกแบบ PCB เขียนเฟิร์มแวร์ ESP32 ไปจนถึงเทรนโมเดล AI และทำแอปมือถือ พื้นฐานเดิมจาก ปวส. ไฟฟ้ากำลัง ทำให้ถนัดงานที่ต่อซอฟต์แวร์เข้ากับฮาร์ดแวร์ เป้าหมายคือใช้ความรู้สร้างโซลูชันที่ช่วยพัฒนาสังคมและอุตสาหกรรม</p>
+      <dl class="meas">
+        <div><dt>Focus</dt><dd>IoT · Embedded · AI</dd></div>
+        <div><dt>Lang</dt><dd>C/C++ · Python · Java</dd></div>
+        <div><dt>Projects</dt><dd>3 channels</dd></div>
+        <div><dt>Base</dt><dd>Bangkok, TH</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ============ CH1: BONSAI ============ -->
+  <section class="channel" id="ch1" style="--c:var(--ch1)">
+    <header class="ch-head">
+      <div class="ch-tag"><span>CH1</span><i></i></div>
+      <div class="ch-title">
+        <p class="kicker">IoT · ESP32 · Minecraft · งานกลุ่ม</p>
+        <h2>ระบบดูแลต้นบอนไซอัจฉริยะ</h2>
+      </div>
+      <svg class="sig" data-sig="moisture" viewBox="0 0 320 80" preserveAspectRatio="none" aria-label="กราฟความชื้นในดิน ลดลงจนถึง 40% แล้วระบบรดน้ำ"></svg>
+    </header>
+
+    <div class="ch-body">
+      <div class="ch-main">
+        <p class="lead">ESP32 วัดความชื้นในดิน อุณหภูมิ และความชื้นในอากาศ แล้วรดน้ำกับพ่นหมอกให้อัตโนมัติ จุดที่ไม่เหมือนใครคือดูสถานะและสั่งรดน้ำ<strong>จากในเกม Minecraft</strong> ได้ ต้นไม้ในโลกจำลองกับต้นไม้จริงเชื่อมกันผ่าน MQTT</p>
+        <h3 class="did">สิ่งที่ผมทำ</h3>
+        <ul class="bul">
+          <li>ออกแบบ Schematic และ PCB Layout ด้วย EasyEDA พร้อมโมเดล 3D เพื่อประกอบบอร์ดควบคุมจริง</li>
+          <li>เขียนเฟิร์มแวร์ ESP32 อ่านอุณหภูมิและความชื้นในดินแบบเรียลไทม์ และสั่งรดน้ำผ่านเครือข่าย</li>
+          <li>เชื่อมฮาร์ดแวร์เข้ากับ Minecraft ให้ตรวจสถานะและสั่งระบบรดน้ำจากโลกจำลองได้</li>
+          <li>ต้นแบบแรก: command block → log ของเกม → Python → HTTP → รีเลย์ 4 ช่อง พร้อมตั้งเวลารดน้ำ 06:00 ผ่าน NTP</li>
+        </ul>
+      </div>
+      <aside class="spec">
+        <dl>
+          <div><dt>Sensor</dt><dd>YL-69 soil moisture, DHT22</dd></div>
+          <div><dt>Actuator</dt><dd>ปั๊มรดน้ำ, ปั๊มพ่นหมอก ผ่านรีเลย์</dd></div>
+          <div><dt>Link</dt><dd>MQTT (Mosquitto), HTTP, Wi-Fi, LoRa</dd></div>
+          <div><dt>Server</dt><dd>Raspberry Pi 5, Flask, Google Cloud SQL</dd></div>
+          <div><dt>Game</dt><dd>Minecraft Java · PaperMC + Java plugin</dd></div>
+        </dl>
+      </aside>
+    </div>
+
+    <!-- simulator -->
+    <div class="sim">
+      <div class="sim-board">
+        <div class="sim-label">ESP32 · RELAY ×4 <span>ลองกดดู</span></div>
+        <div class="relays" id="relays"></div>
+        <div class="sim-btns">
+          <button class="btn" id="allOff" type="button">/button3/on · ปิดทั้งหมด</button>
+          <button class="btn" id="dawn" type="button">⏱ จำลอง 06:00</button>
+        </div>
+      </div>
+      <div class="term" id="term" aria-live="polite"><span class="d">$ tail -f latest.log  # กดรีเลย์เพื่อส่ง trigger จากในเกม</span></div>
+    </div>
+
+    <!-- architecture -->
+    <ol class="pipe" aria-label="สถาปัตยกรรมระบบ">
+      <li><b>ESP32</b><code>PUB plant/data/moisture</code></li>
+      <li><b>Mosquitto</b><code>broker @ Pi 5</code></li>
+      <li><b>Flask</b><code>decide → Cloud SQL</code></li>
+      <li><b>Topic</b><code>system/control/water</code></li>
+      <li><b>ปั๊มจริง + Redstone</b><code>relay · setblock</code></li>
+    </ol>
+
+    <div class="figs two">
+      <figure><button type="button" data-zoom><img src="../images/bonsai-wokwi.webp" alt="วงจร ESP32 กับ DHT22, YL-69 และรีเลย์บน Wokwi" width="844" height="545"></button><figcaption>วงจรทดสอบบน Wokwi: ESP32 + DHT22 + YL-69 + รีเลย์ 2 ช่อง</figcaption></figure>
+      <div class="card">
+        <h3 class="did">ระบบทำอะไรได้บ้าง</h3>
+        <ul class="bul">
+          <li>Web Dashboard แสดงอุณหภูมิ ความชื้นในดิน และความชื้นในอากาศ ใช้ได้บน Windows, Android และ iOS</li>
+          <li>สั่งรดน้ำได้ทั้งจาก dashboard และจากในเกม</li>
+          <li>เก็บประวัติการรดน้ำ ตารางเวลา และค่าเซนเซอร์ล่าสุดบนคลาวด์</li>
+          <li>ส่งรายงานทาง Email</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CH2: PHARMACY ============ -->
+  <section class="channel" id="ch2" style="--c:var(--ch2)">
+    <header class="ch-head">
+      <div class="ch-tag"><span>CH2</span><i></i></div>
+      <div class="ch-title">
+        <p class="kicker">CPE 406 · IoT · AI · ทีม SANTA 888</p>
+        <h2>Pharmacy Air Quality Monitoring</h2>
+      </div>
+      <svg class="sig" data-sig="temp" viewBox="0 0 320 80" preserveAspectRatio="none" aria-label="กราฟอุณหภูมิในคลังยาอยู่ในช่วงปลอดภัย มีจุดหนึ่งเกินและระบบแจ้งเตือน"></svg>
+    </header>
+
+    <div class="ch-body">
+      <div class="ch-main">
+        <p class="lead">ระบบเฝ้าระวังอุณหภูมิ ความชื้น และ VOCs ในคลังยาแบบเรียลไทม์ เพื่อรักษา<strong>ความคงสภาพของยา</strong> แทนการจดบันทึกหรือ Data Logger ที่ดูข้อมูลสดไม่ได้ เมื่อค่าเริ่มเข้าใกล้จุดวิกฤต ระบบแจ้งเตือนทันทีหรือสั่ง HVAC ให้ทำงานตาม setpoint</p>
+        <h3 class="did">สิ่งที่ผมทำ</h3>
+        <ul class="bul">
+          <li>ออกแบบและพัฒนาระบบตรวจวัดอุณหภูมิและความชื้นสำหรับคลังยาตามมาตรฐาน</li>
+          <li>ใช้ AI ช่วยตรวจจับความผิดปกติของสภาพแวดล้อมและแจ้งเตือนความปลอดภัย</li>
+          <li>ออกแบบเว็บ Dashboard ให้เห็นภาพรวมและจุดเสี่ยง (Hot Spots) ทุกจุดในคลังพร้อมกัน</li>
+          <li>ทำงานร่วมกับทีมในการนำเสนอและแก้ปัญหาทางเทคนิค</li>
+        </ul>
+      </div>
+      <aside class="spec">
+        <dl>
+          <div><dt>Hardware</dt><dd>Indoor Air Quality Sensor, Industrial IoT Controller / PLC</dd></div>
+          <div><dt>Measure</dt><dd>Temp · RH · VOCs</dd></div>
+          <div><dt>Control</dt><dd>HVAC อัตโนมัติตาม setpoint</dd></div>
+          <div><dt>Team</dt><dd>คณาธิป อุ่นละม้าย, ภาคภูมิ คนขยัน, อนุวัตร นาควิบูลย์</dd></div>
+        </dl>
+      </aside>
+    </div>
+
+    <div class="objs">
+      <div class="obj"><code>01</code><b>Real-time monitoring</b><p>วัดและแสดงอุณหภูมิกับความชื้นได้ทันทีผ่านเครือข่ายเซนเซอร์ IoT</p></div>
+      <div class="obj"><code>02</code><b>Excursion control</b><p>แจ้งเตือนเมื่อค่าเข้าใกล้จุดวิกฤต หรือสั่ง HVAC แก้ให้อัตโนมัติ</p></div>
+      <div class="obj"><code>03</code><b>Centralized data</b><p>Dashboard รวมทุกจุดในคลัง ไม่ต้องเดินตรวจทีละจุด</p></div>
+      <div class="obj"><code>04</code><b>Less loss</b><p>ลดยาเสื่อมจากการรู้ตัวช้า รายงานเป็นดิจิทัล ตรวจย้อนกลับได้เร็ว</p></div>
+    </div>
+
+    <div class="figs three">
+      <figure><button type="button" data-zoom><img class="contain" src="../images/pharmacy-iaq-sensor.webp" alt="Indoor Air Quality Sensor" width="300" height="300"></button><figcaption>Indoor Air Quality Sensor</figcaption></figure>
+      <figure><button type="button" data-zoom><img class="cover" src="../images/pharmacy-plc.webp" alt="Industrial IoT Controller / PLC" width="415" height="421"></button><figcaption>Industrial IoT Controller / PLC</figcaption></figure>
+      <figure><button type="button" data-zoom><img class="cover" src="../images/pharmacy-warehouse.webp" alt="ภาพคลังเก็บยาและสินค้า" width="800" height="370"></button><figcaption>คลังแบบที่ระบบออกแบบมาให้ใช้</figcaption></figure>
+    </div>
+
+    <div class="card">
+      <h3 class="did">Roadmap</h3>
+      <ul class="bul">
+        <li><strong>Predictive Maintenance ของแอร์:</strong> ถ้าคอมเพรสเซอร์ต้องทำงานหนักผิดปกติเพื่อรักษาอุณหภูมิเท่าเดิม ระบบเตือนช่างก่อนแอร์เสียจริง</li>
+        <li><strong>เชื่อม WMS/ERP:</strong> ถ้า AI ทำนายว่าโซนไหนจะร้อนในอีก 2 ชั่วโมง ระบบคลังล็อกโซนนั้นไม่ให้วางยาที่ไวต่อความร้อน</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ CH3: FITAI ============ -->
+  <section class="channel" id="ch3" style="--c:var(--ch3)">
+    <header class="ch-head">
+      <div class="ch-tag"><span>CH3</span><i></i></div>
+      <div class="ch-title">
+        <p class="kicker">CPE 451 · Mobile · AI / ML · งานกลุ่ม</p>
+        <h2>FitAI</h2>
+      </div>
+      <svg class="sig" data-sig="reps" viewBox="0 0 320 80" preserveAspectRatio="none" aria-label="กราฟมุมเข่าขณะ squat ขึ้นลง 5 ครั้ง นับ rep ได้ 5"></svg>
+    </header>
+
+    <div class="ch-body">
+      <div class="ch-main">
+        <p class="lead">แอปฟิตเนสที่มี AI เป็นโค้ชส่วนตัว รวมการออกกำลังกาย โภชนาการ ความคืบหน้า และการนอนไว้ในแอปเดียว หัวใจคือหน้า <strong>Camera AI</strong> ที่ใช้ Pose Estimation ดูท่าทางแบบเรียลไทม์ นับจำนวนครั้ง และเตือนเมื่อทำท่าผิด</p>
+        <h3 class="did">สิ่งที่ผมทำ</h3>
+        <ul class="bul">
+          <li>พัฒนาและเทรนโมเดล AI / ML ให้ตรวจและวิเคราะห์ท่าออกกำลังกายแบบเรียลไทม์ว่าถูกหรือไม่</li>
+          <li>ออกแบบ UI/UX ของแอป และรวบรวมข้อมูลมาเปรียบเทียบเพื่อปรับประสิทธิภาพ</li>
+          <li>จัดการฐานข้อมูลการใช้งานของผู้ใช้ เพื่อวิเคราะห์และประเมินผลการออกกำลังกาย</li>
+        </ul>
+      </div>
+      <aside class="spec">
+        <dl>
+          <div><dt>App</dt><dd>React Native + Expo, React Navigation</dd></div>
+          <div><dt>Pose AI</dt><dd>WebSocket <code>ws://…:8000/stream</code> → frame, rep_count, phase, joints</dd></div>
+          <div><dt>Moves</dt><dd>Squat, Push-up, Skeleton Only</dd></div>
+          <div><dt>Data</dt><dd>Supabase + AsyncStorage</dd></div>
+          <div><dt>Repo</dt><dd><a href="https://github.com/anuwat010646/FitAI" target="_blank" rel="noopener">anuwat010646/FitAI ↗</a></dd></div>
+        </dl>
+      </aside>
+    </div>
+
+    <div class="phones" aria-label="หน้าจอแอป FitAI">
+      <div class="phone"><button type="button" data-zoom><img src="../images/fitai-login.webp" alt="หน้า Login" width="540" height="1204"></button><b>Login</b><span>เข้าสู่ระบบด้วยอีเมล</span></div>
+      <div class="phone"><button type="button" data-zoom><img src="../images/fitai-home.webp" alt="หน้า Home Dashboard" width="540" height="1200"></button><b>Home</b><span>สรุป kcal และเวลาวันนี้</span></div>
+      <div class="phone"><button type="button" data-zoom><img src="../images/fitai-workout-detail.webp" alt="หน้า Workout Detail" width="540" height="1200"></button><b>Workout</b><span>จับเวลาเซ็ตและช่วงพัก</span></div>
+      <div class="phone"><button type="button" data-zoom><img src="../images/fitai-camera-ai.webp" alt="หน้า Camera AI" width="540" height="1200"></button><b>Camera AI</b><span>สตรีมภาพไป Pose API</span></div>
+      <div class="phone"><button type="button" data-zoom><img src="../images/fitai-nutrition.webp" alt="หน้า Nutrition" width="540" height="1200"></button><b>Nutrition</b><span>มื้ออาหาร kcal และ macro</span></div>
+      <div class="phone"><button type="button" data-zoom><img src="../images/fitai-progress.webp" alt="หน้า Progress" width="540" height="1200"></button><b>Progress</b><span>น้ำหนัก ส่วนสูง BMI</span></div>
+      <div class="phone"><button type="button" data-zoom><img src="../images/fitai-sleep.webp" alt="หน้า Sleep Tracker" width="540" height="1200"></button><b>Sleep</b><span>ชั่วโมงนอน กราฟ 7 วัน</span></div>
+    </div>
+
+    <div class="figs two">
+      <figure><button type="button" data-zoom><img src="../images/fitai-data-map.webp" alt="FitAI Data Map: schema ฐานข้อมูล" width="2200" height="1320"></button><figcaption>Data Map: Core Profile · Activity · Health Tracking · Challenge &amp; Social</figcaption></figure>
+      <figure><button type="button" data-zoom><img class="cover tall" src="../images/fitai-pose-test.webp" alt="ทดสอบโมเดลตรวจท่าทาง แสดง skeleton และนับ REPS 35" width="536" height="960"></button><figcaption>ทดสอบโมเดลจริง: จับข้อต่อร่างกายและมือ นับได้ 35 ครั้ง</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION: bus timing ============ -->
+  <section id="bus" class="block">
+    <header class="block-head"><h2>การศึกษา</h2><code>BUS[2:0] · ลำดับเวลา →</code></header>
+    <div class="bus" role="list">
+      <div class="seg" role="listitem"><code>0x0</code><b>มัธยมปลาย</b><span>โรงเรียนพัฒนเวชศึกษา ระยอง</span></div>
+      <div class="seg" role="listitem"><code>0x1</code><b>ปวส. ไฟฟ้ากำลัง</b><span>วิทยาลัยเทคโนโลยีไออาร์พีซี (IRPCT) ระยอง</span></div>
+      <div class="seg now" role="listitem"><code>0x2</code><b>ป.ตรี วิศวกรรมคอมพิวเตอร์</b><span>คณะเทคโนโลยีสารสนเทศ มหาวิทยาลัยศรีปทุม กรุงเทพฯ</span></div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS: IC pinout ============ -->
+  <section id="pinout" class="block">
+    <header class="block-head"><h2>ทักษะ</h2><code>AN-2003 · DIP-16 pinout</code></header>
+    <div class="ic-wrap">
+      <div class="ic" aria-label="ทักษะ แสดงเป็นขาของชิป">
+        <ul class="pins left">
+          <li><span>C / C++</span><i>1</i></li>
+          <li><span>Python</span><i>2</i></li>
+          <li><span>Java</span><i>3</i></li>
+          <li><span>JavaScript</span><i>4</i></li>
+          <li><span>React Native</span><i>5</i></li>
+          <li><span>SQL</span><i>6</i></li>
+          <li><span>Excel</span><i>7</i></li>
+          <li><span>GND</span><i>8</i></li>
+        </ul>
+        <div class="die">
+          <span class="notch" aria-hidden="true"></span>
+          <b>AN-2003</b>
+          <small>ANUWAT · CPE</small>
+          <small>SPU · TH</small>
+        </div>
+        <ul class="pins right">
+          <li><i>16</i><span>VCC</span></li>
+          <li><i>15</i><span>ESP32</span></li>
+          <li><i>14</i><span>MQTT</span></li>
+          <li><i>13</i><span>Raspberry Pi</span></li>
+          <li><i>12</i><span>Cisco</span></li>
+          <li><i>11</i><span>EasyEDA PCB</span></li>
+          <li><i>10</i><span>AI / ML</span></li>
+          <li><i>9</i><span>Git</span></li>
+        </ul>
+      </div>
+      <div class="langs">
+        <h3 class="did">ภาษา</h3>
+        <div class="lang"><span>ไทย</span><div class="lvl" data-v="5"></div><small>ภาษาหลัก</small></div>
+        <div class="lang"><span>English</span><div class="lvl" data-v="3"></div><small>พอใช้</small></div>
+        <div class="lang"><span>中文</span><div class="lvl" data-v="2"></div><small>พอใช้</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT: serial console ============ -->
+  <section id="tty" class="block">
+    <header class="block-head"><h2>ติดต่อ</h2><code>/dev/ttyUSB0 · 115200 baud</code></header>
+    <div class="tty">
+      <p><span class="pr">anuwat@spu:~$</span> contact --list</p>
+      <div class="tty-row"><code>email </code><button class="cp" type="button" data-copy="guy-590uri@outlook.co.th">guy-590uri@outlook.co.th</button></div>
+      <div class="tty-row"><code>phone </code><button class="cp" type="button" data-copy="093-326-4986">093-326-4986</button></div>
+      <div class="tty-row"><code>github</code><a class="cp" href="https://github.com/anuwat010646" target="_blank" rel="noopener">github.com/anuwat010646 ↗</a></div>
+      <p class="tty-hint"><span class="pr">anuwat@spu:~$</span> <span class="caret"></span> <span class="muted">กดที่ค่าเพื่อคัดลอก</span></p>
+    </div>
+  </section>
+
+  <footer class="foot"><code>EOF · © Anuwat Nakwibool</code></footer>
+</main>
+
+<dialog id="zoom" aria-label="ภาพขยาย">
+  <form method="dialog"><button class="x" type="submit">ESC ปิด</button></form>
+  <img id="zoomImg" alt="">
+  <p id="zoomCap"></p>
+</dialog>
+<div class="toast" id="toast" role="status" hidden>คัดลอกแล้ว</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
