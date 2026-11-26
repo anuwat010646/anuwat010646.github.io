@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Anuwat Nakwibool</title>
+  <meta name="description" content="พอร์ตโฟลิโอของอนุวัตร นาควิบูลย์ นักศึกษาวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยศรีปทุม งาน IoT, Embedded และ AI">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ WELCOME SCREEN ============ -->
+<div class="welcome" id="welcome" role="dialog" aria-label="หน้าต้อนรับ">
+  <div class="w-icons">
+    <span><svg viewBox="0 0 24 24"><path d="M8 6 2 12l6 6M16 6l6 6-6 6"/></svg></span>
+    <span><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/><path d="M9 1v4M15 1v4M9 19v4M15 19v4M1 9h4M1 15h4M19 9h4M19 15h4"/></svg></span>
+    <span><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 2.9.8.1-.7.4-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg></span>
+  </div>
+  <h2><span>ยินดีต้อนรับสู่</span><br><b id="welcomeType">Portfolio Website</b></h2>
+  <p class="w-url"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>github.com/anuwat010646</p>
+  <button class="start-btn" id="startBtn" type="button"><span class="pulse" aria-hidden="true"></span><svg viewBox="0 0 24 24"><path d="M7 4l13 8-13 8z"/></svg>START</button>
+  <p class="w-hint">กดปุ่ม หรือกด <kbd>Enter</kbd> เพื่อเข้าสู่เว็บไซต์</p>
+</div>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="cur-dot" id="curDot" aria-hidden="true"></div><div class="cur-ring" id="curRing" aria-hidden="true"></div>
+
+<!-- background -->
+<div class="bg" aria-hidden="true"><i class="blob b1"></i><i class="blob b2"></i><i class="blob b3"></i><i class="grid"></i></div>
+
+<!-- ============ NAVBAR ============ -->
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="logo" href="#home" aria-label="Anuwat Nakwibool · Computer Engineering">AN<span>/CPE</span></a>
+    <nav class="links" id="links" aria-label="เมนู">
+      <a href="#home" class="on">Home</a>
+      <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-label="เปิดเมนู" aria-expanded="false"><i></i><i></i></button>
+  </div>
+</header>
+
+<main>
+  <!-- ============ HOME ============ -->
+  <section class="home" id="home">
+    <canvas class="net" id="net" aria-hidden="true"></canvas>
+    <i class="spot" aria-hidden="true"></i>
+    <div class="home-left reveal">
+      <span class="badge"><b>✦</b> Ready to Innovate</span>
+      <h1>
+        <span class="h-line" data-scramble>Computer Engineering</span>
+        <span class="h-line grad" data-scramble>Student</span>
+      </h1>
+      <p class="typed"><span id="typed"></span><i class="caret"></i></p>
+      <p class="home-desc">นักศึกษาวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยศรีปทุม ชอบให้โค้ดขยับของจริง ตั้งแต่ออกแบบ PCB เขียนเฟิร์มแวร์ ESP32 ไปจนถึงเทรนโมเดล AI และทำแอปมือถือ</p>
+      <div class="chips">
+        <span>ESP32</span><span>C / C++</span><span>Python</span><span>MQTT</span><span>React Native</span>
+      </div>
+      <div class="ctas">
+        <a class="btn primary magnet" href="#portfolio">ดูผลงาน <svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        <a class="btn ghost magnet" href="#contact">ติดต่อ <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg></a>
+      </div>
+      <div class="socials">
+        <a href="https://github.com/anuwat010646" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 2.9.8.1-.7.4-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg></a>
+        <button type="button" data-copy="guy-590uri@outlook.co.th" aria-label="คัดลอกอีเมล"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg></button>
+        <button type="button" data-copy="093-326-4986" aria-label="คัดลอกเบอร์โทร"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></button>
+      </div>
+    </div>
+
+    <div class="home-right reveal">
+      <div class="tilt" id="tilt">
+        <div class="code-win">
+          <div class="cw-bar">
+            <i></i><i></i><i></i>
+            <div class="cw-tabs" role="tablist" aria-label="ไฟล์ตัวอย่าง">
+              <button type="button" role="tab" aria-selected="true" data-file="0">main.cpp</button>
+              <button type="button" role="tab" aria-selected="false" data-file="1">trigger_esp.py</button>
+              <button type="button" role="tab" aria-selected="false" data-file="2">pose_ws.js</button>
+            </div>
+            <button class="run" id="runBtn" type="button" aria-label="รันโค้ด"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg>Run</button>
+          </div>
+          <pre id="codeBox" aria-label="ตัวอย่างโค้ดจากโปรเจกต์"></pre>
+          <div class="serial">
+            <div class="serial-bar"><span><i class="dot" id="serialDot"></i><b id="serialName">Serial Monitor</b></span><span id="serialBaud">115200 baud</span></div>
+            <div class="serial-out" id="serialOut" aria-live="polite"><span class="d">กด ▶ Run เพื่อดูผลลัพธ์</span></div>
+          </div>
+          <i class="glare" aria-hidden="true"></i>
+        </div>
+        <div class="float f1" data-depth="40"><b id="fRelay">4</b><span>Relays</span></div>
+        <div class="float f2" data-depth="60"><b>MQTT</b><span>plant/data</span></div>
+        <div class="float f3" data-depth="50"><b id="fReps">35</b><span>reps · AI</span></div>
+      </div>
+    </div>
+    <a class="scroll-cue" href="#about" aria-label="เลื่อนลง"><span></span>scroll</a>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about">
+    <header class="sec-title reveal">
+      <h2 data-scramble>About Me</h2>
+      <p>✦ เปลี่ยนไอเดียให้เป็นระบบที่ใช้งานได้จริง ✦</p>
+    </header>
+
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p class="hello">Hello, I'm</p>
+        <h3 class="grad name-fx" id="nameFx" tabindex="0" role="button" aria-label="Anuwat Nakwibool กดเพื่อสลับเป็นชื่อภาษาไทย">Anuwat Nakwibool</h3>
+        <p class="about-p">นักศึกษาวิศวกรรมคอมพิวเตอร์ที่สนใจการพัฒนาเทคโนโลยีและนวัตกรรมใหม่ ๆ โดยเฉพาะ AI และ Internet of Things มีทักษะเขียนโปรแกรม C/C++, Python และ Java ออกแบบระบบเครือข่าย และพัฒนาแอปพลิเคชัน พื้นฐานเดิมจาก ปวส. ไฟฟ้ากำลัง ทำให้ถนัดงานที่ต้องต่อซอฟต์แวร์เข้ากับฮาร์ดแวร์</p>
+        <blockquote>“เป้าหมายคือใช้ความรู้สร้างโซลูชันที่ช่วยพัฒนาสังคมและอุตสาหกรรม”</blockquote>
+        <div class="ctas">
+          <a class="btn primary cv-btn" href="files/Resume_Anuwat_Nakwibool.pdf" download>ดาวน์โหลด CV <svg viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg></a>
+          <a class="btn ghost" href="#portfolio">ดูผลงาน <svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="photo-wrap reveal">
+        <div class="ring"></div>
+        <div class="orbit" aria-hidden="true"><span style="--a:0deg">ESP32</span><span style="--a:72deg">C++</span><span style="--a:144deg">MQTT</span><span style="--a:216deg">AI</span><span style="--a:288deg">PCB</span></div>
+        <img class="photo" src="images/profile.webp" alt="อนุวัตร นาควิบูลย์" width="852" height="1008">
+      </div>
+    </div>
+
+    <div class="stats" id="stats"></div>
+  </section>
+
+  <!-- ============ PORTFOLIO SHOWCASE ============ -->
+  <section class="portfolio" id="portfolio">
+    <header class="sec-title reveal">
+      <h2 data-scramble>Portfolio Showcase</h2>
+      <p>งานโปรเจกต์ การศึกษา และเครื่องมือที่ใช้ทำงาน กดที่การ์ดเพื่อดูรายละเอียด</p>
+    </header>
+
+    <div class="tabs reveal" role="tablist" aria-label="หมวดผลงาน">
+      <span class="tab-ind" id="tabInd" aria-hidden="true"></span>
+      <button role="tab" aria-selected="true" data-tab="projects" id="t-projects"><svg viewBox="0 0 24 24"><path d="M8 6 2 12l6 6M16 6l6 6-6 6"/></svg>Projects</button>
+      <button role="tab" aria-selected="false" data-tab="education" id="t-education"><svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>Education</button>
+      <button role="tab" aria-selected="false" data-tab="tech" id="t-tech"><svg viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>Tech Stack</button>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-projects" aria-labelledby="t-projects"><div class="proj-grid" id="projGrid"></div></div>
+    <div class="panel" role="tabpanel" id="p-education" aria-labelledby="t-education" hidden><div class="edu-grid" id="eduGrid"><i class="edu-fill" id="eduFill"></i></div></div>
+    <div class="panel" role="tabpanel" id="p-tech" aria-labelledby="t-tech" hidden><div class="marquee" aria-hidden="true"><div class="mq-track" id="mqTrack"></div></div><div class="tech-grid" id="techGrid"></div>
+      <div class="langs" id="langs"></div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact">
+    <header class="sec-title reveal">
+      <h2 data-scramble>Contact Me</h2>
+      <p>สนใจคุยเรื่องฝึกงาน งาน IoT หรือโปรเจกต์ AI ส่งข้อความมาได้เลย</p>
+    </header>
+
+    <div class="contact-grid">
+      <form class="glass form reveal" id="form" novalidate>
+        <div class="f-head">
+          <h3 class="grad">Get in Touch</h3>
+          <svg viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4 20-7z"/></svg>
+        </div>
+        <p class="f-sub">เขียนข้อความแล้วกดส่ง ระบบจะเปิดโปรแกรมอีเมลพร้อมข้อความให้</p>
+        <label class="field"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><input id="fName" name="name" placeholder="ชื่อของคุณ" required></label>
+        <label class="field"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg><input id="fEmail" name="email" type="email" placeholder="อีเมลของคุณ" required></label>
+        <label class="field area"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><textarea id="fMsg" name="message" rows="5" placeholder="ข้อความ" required></textarea></label>
+        <p class="f-err" id="fErr" hidden></p>
+        <button class="btn primary wide" type="submit">ส่งข้อความ <svg viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4 20-7z"/></svg></button>
+      </form>
+
+      <div class="glass connect reveal">
+        <h3>Connect With Me</h3>
+        <button class="c-item" type="button" data-copy="guy-590uri@outlook.co.th">
+          <span class="c-ic"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg></span>
+          <span><b>Email</b><small>guy-590uri@outlook.co.th</small></span><em>คัดลอก</em>
+        </button>
+        <button class="c-item" type="button" data-copy="093-326-4986">
+          <span class="c-ic"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+          <span><b>Phone</b><small>093-326-4986</small></span><em>คัดลอก</em>
+        </button>
+        <a class="c-item" href="https://github.com/anuwat010646" target="_blank" rel="noopener">
+          <span class="c-ic"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 2.9.8.1-.7.4-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg></span>
+          <span><b>GitHub</b><small>github.com/anuwat010646</small></span><em>เปิด ↗</em>
+        </a>
+        <div class="loc"><svg viewBox="0 0 24 24"><path d="M12 22s8-7 8-13a8 8 0 0 0-16 0c0 6 8 13 8 13z"/><circle cx="12" cy="9" r="3"/></svg>Bangkok, Thailand · มหาวิทยาลัยศรีปทุม</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<button class="to-top" id="toTop" type="button" aria-label="กลับขึ้นด้านบน"><svg class="ring-svg" viewBox="0 0 48 48"><circle cx="24" cy="24" r="21"/><circle id="toTopRing" cx="24" cy="24" r="21"/></svg><svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<footer class="foot">
+  <span>© 2026 Anuwat Nakwibool</span>
+  <span>Built with HTML · CSS · JavaScript</span>
+</footer>
+
+<!-- ============ PROJECT DETAIL ============ -->
+<div class="detail" id="detail" role="dialog" aria-modal="true" aria-labelledby="dTitle" hidden>
+  <div class="d-in" id="dBody"></div>
+</div>
+
+<!-- lightbox + toast -->
+<dialog id="zoom" aria-label="ภาพขยาย">
+  <form method="dialog"><button class="x" type="submit" aria-label="ปิด">✕</button></form>
+  <img id="zoomImg" alt="">
+  <p id="zoomCap"></p>
+</dialog>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

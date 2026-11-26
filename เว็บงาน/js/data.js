@@ -1,0 +1,195 @@
+/* ===========================================================
+   ข้อมูลทั้งหมดของเว็บอยู่ในไฟล์นี้
+   เพิ่ม/แก้โปรเจกต์ การศึกษา หรือ tech stack ได้ที่นี่ที่เดียว
+   =========================================================== */
+window.PORTFOLIO = {
+  roles: [
+    'IoT & Embedded Developer',
+    'มหาวิทยาลัยศรีปทุม',
+    'ESP32 · MQTT · Minecraft',
+    'AI Pose Detection',
+    'Mobile App Developer',
+    'Electrical Power · Solar',
+  ],
+
+  projects: [
+    {
+      id: 'bonsai',
+      title: 'ระบบดูแลต้นบอนไซอัจฉริยะ',
+      subtitle: 'ESP32 & Minecraft',
+      cover: 'images/bonsai-wokwi.webp',
+      short: 'ESP32 วัดความชื้นในดิน อุณหภูมิ และความชื้นในอากาศ แล้วรดน้ำให้อัตโนมัติ สั่งงานได้จากในเกม Minecraft',
+      desc: 'ระบบดูแลต้นไม้ที่ใช้ ESP32 อ่านค่าเซนเซอร์แบบเรียลไทม์ แล้วรดน้ำและพ่นหมอกให้อัตโนมัติ จุดที่ไม่เหมือนใครคือดูสถานะและสั่งรดน้ำจากในเกม Minecraft ได้ ต้นไม้ในโลกจำลองกับต้นไม้จริงเชื่อมกันผ่าน MQTT บน Raspberry Pi 5',
+      tags: ['IoT', 'ESP32', 'Minecraft', 'งานกลุ่ม'],
+      tech: ['C++ (Arduino)', 'ESP32', 'MQTT', 'Raspberry Pi 5', 'Python Flask', 'Google Cloud SQL', 'EasyEDA', 'Java Plugin'],
+      role: [
+        'ออกแบบ Schematic และ PCB Layout ด้วย EasyEDA พร้อมโมเดล 3D เพื่อประกอบบอร์ดควบคุมจริง',
+        'เขียนเฟิร์มแวร์ ESP32 อ่านอุณหภูมิและความชื้นในดินแบบเรียลไทม์ และสั่งรดน้ำผ่านเครือข่าย',
+        'เชื่อมฮาร์ดแวร์เข้ากับ Minecraft ให้ตรวจสถานะและสั่งระบบรดน้ำจากโลกจำลองได้',
+      ],
+      features: [
+        'Web Dashboard แสดงอุณหภูมิ ความชื้นในดิน และความชื้นในอากาศ (Windows, Android, iOS)',
+        'สั่งรดน้ำได้ทั้งจาก dashboard และจากในเกม ผ่าน topic system/control/water',
+        'ตั้งเวลารดน้ำอัตโนมัติด้วย NTP และเก็บประวัติไว้บน Google Cloud SQL',
+        'ปลั๊กอิน Java บน PaperMC รับคำสั่งแล้ว setblock Redstone เพื่อรดน้ำต้นไม้ในเกม',
+        'ส่งรายงานทาง Email',
+      ],
+      pipeline: [
+        ['ESP32', 'PUB plant/data/moisture'],
+        ['Mosquitto', 'broker @ Pi 5'],
+        ['Flask', 'decide → Cloud SQL'],
+        ['Topic', 'system/control/water'],
+        ['ปั๊มจริง + Redstone', 'relay · setblock'],
+      ],
+      gallery: [
+        { src: 'images/bonsai-wokwi.webp', cap: 'วงจรทดสอบบน Wokwi: ESP32 + DHT22 + YL-69 + รีเลย์' },
+      ],
+      simulator: true,
+    },
+    {
+      id: 'pharmacy',
+      title: 'Pharmacy Air Quality Monitoring',
+      subtitle: 'CPE 406 · ทีม SANTA 888',
+      cover: 'images/pharmacy-warehouse.webp',
+      short: 'เฝ้าระวังอุณหภูมิ ความชื้น และ VOCs ในคลังยาแบบเรียลไทม์ ใช้ AI ตรวจจับความผิดปกติ และแจ้งเตือนทันที',
+      desc: 'ระบบเฝ้าระวังสภาพแวดล้อมในคลังยาแบบเรียลไทม์ เพื่อรักษาความคงสภาพของยา (Drug Stability) แทนการจดบันทึกหรือ Data Logger ที่ดูข้อมูลสดไม่ได้ เมื่อค่าเริ่มเข้าใกล้จุดวิกฤต ระบบแจ้งเตือนทันทีหรือสั่ง HVAC ให้ทำงานตาม setpoint',
+      tags: ['IoT', 'AI', 'Dashboard', 'CPE 406'],
+      tech: ['IoT Sensor', 'Industrial Controller / PLC', 'AI Anomaly Detection', 'Web Dashboard', 'HVAC Control'],
+      role: [
+        'ออกแบบและพัฒนาระบบตรวจวัดอุณหภูมิและความชื้นสำหรับคลังยาตามมาตรฐาน',
+        'ใช้ AI ช่วยตรวจจับความผิดปกติของสภาพแวดล้อมและแจ้งเตือนความปลอดภัย',
+        'ออกแบบเว็บ Dashboard ให้เห็นภาพรวมและจุดเสี่ยง (Hot Spots) ทุกจุดในคลังพร้อมกัน',
+        'ทำงานร่วมกับทีมในการนำเสนอและแก้ปัญหาทางเทคนิค',
+      ],
+      features: [
+        'Real-time monitoring: อุณหภูมิ ความชื้น และ VOCs จากเซนเซอร์หลายจุด',
+        'Excursion control: แจ้งเตือนทันทีเมื่อใกล้จุดวิกฤต หรือสั่ง HVAC แก้อัตโนมัติ',
+        'Centralized dashboard: เห็นทุกจุดในคลังพร้อมกัน ไม่ต้องเดินตรวจ',
+        'รายงานดิจิทัลอัตโนมัติ ตรวจสอบย้อนกลับ (Traceability) ได้เร็ว',
+        'Roadmap: Predictive Maintenance ของแอร์ และเชื่อมกับระบบ WMS/ERP',
+      ],
+      team: 'คณาธิป อุ่นละม้าย · ภาคภูมิ คนขยัน · อนุวัตร นาควิบูลย์',
+      gallery: [
+        { src: 'images/pharmacy-iaq-sensor.webp', cap: 'Indoor Air Quality Sensor', contain: true },
+        { src: 'images/pharmacy-plc.webp', cap: 'Industrial IoT Controller / PLC' },
+        { src: 'images/pharmacy-warehouse.webp', cap: 'คลังแบบที่ระบบออกแบบมาให้ใช้' },
+      ],
+    },
+    {
+      id: 'fitai',
+      title: 'FitAI',
+      subtitle: 'CPE 451 · Mobile App + AI',
+      cover: 'images/fitai-pose-test.webp',
+      short: 'แอปฟิตเนสที่มี AI เป็นโค้ช ใช้ Pose Estimation ดูท่าทางแบบเรียลไทม์ นับจำนวนครั้ง และเตือนเมื่อทำท่าผิด',
+      desc: 'แอปฟิตเนสบนมือถือที่รวมการออกกำลังกาย โภชนาการ ความคืบหน้า และการนอนไว้ในแอปเดียว หัวใจคือหน้า Camera AI ที่สตรีมภาพไป Pose API ผ่าน WebSocket แล้วได้ข้อต่อร่างกาย จำนวนครั้ง และ phase ของท่ากลับมาแบบเรียลไทม์',
+      tags: ['Mobile', 'AI / ML', 'React Native', 'CPE 451'],
+      tech: ['React Native', 'Expo', 'React Navigation', 'Pose Estimation', 'WebSocket', 'Supabase', 'AsyncStorage'],
+      repo: 'https://github.com/anuwat010646/FitAI',
+      role: [
+        'พัฒนาและเทรนโมเดล AI / ML ให้ตรวจและวิเคราะห์ท่าออกกำลังกายแบบเรียลไทม์ว่าถูกหรือไม่',
+        'ออกแบบ UI/UX ของแอป และรวบรวมข้อมูลมาเปรียบเทียบเพื่อปรับประสิทธิภาพ',
+        'จัดการฐานข้อมูลการใช้งานของผู้ใช้ เพื่อวิเคราะห์และประเมินผลการออกกำลังกาย',
+      ],
+      features: [
+        'Camera AI: ws://…:8000/stream ส่งกลับ frame, rep_count, phase, joints รองรับ Squat / Push-up',
+        'Workout Detail: จับเวลาเซ็ตและช่วงพัก บันทึกผลกลับหน้า Home',
+        'Nutrition: บันทึกมื้ออาหาร kcal และ macro เทียบเป้า 2,100 kcal',
+        'Progress: น้ำหนัก ส่วนสูง BMI พร้อมกราฟ SVG',
+        'Sleep Tracker: ชั่วโมงนอน คุณภาพการนอน และกราฟ 7 วัน',
+      ],
+      phones: [
+        ['images/fitai-login.webp', 'Login'],
+        ['images/fitai-home.webp', 'Home'],
+        ['images/fitai-workout-detail.webp', 'Workout'],
+        ['images/fitai-camera-ai.webp', 'Camera AI'],
+        ['images/fitai-nutrition.webp', 'Nutrition'],
+        ['images/fitai-progress.webp', 'Progress'],
+        ['images/fitai-sleep.webp', 'Sleep'],
+      ],
+      gallery: [
+        { src: 'images/fitai-pose-test.webp', cap: 'ทดสอบโมเดลจริง: จับข้อต่อร่างกายและมือ นับได้ 35 ครั้ง' },
+        { src: 'images/fitai-data-map.webp', cap: 'Data Map: schema ฐานข้อมูลของแอป' },
+      ],
+    },
+    {
+      id: 'solar-mower',
+      title: 'เครื่องตัดหญ้าพลังงานแสงอาทิตย์',
+      subtitle: 'Solar Lawn Mower · โครงงาน ปวส. 2565',
+      cover: 'images/solar-mower-side.webp',
+      short: 'เปลี่ยนเครื่องตัดหญ้าเบนซินเป็นมอเตอร์ DC 24V ที่ชาร์จด้วยแผงโซลาร์ ใช้งานได้ 2 ชั่วโมงต่อการชาร์จ ไม่ต้องเติมน้ำมัน',
+      desc: 'โครงงานจบ ปวส. แผนกไฟฟ้ากำลัง สาขางานติดตั้งไฟฟ้า วิทยาลัยเทคโนโลยีไออาร์พีซี น้ำมันแพงและเครื่องยนต์ก่อมลพิษทั้งอากาศและเสียง จึงเปลี่ยนต้นกำลังเป็นมอเตอร์ไฟฟ้ากระแสตรงที่ชาร์จจากแสงอาทิตย์ แค่กดสวิตช์ก็ใช้งานได้ ไม่ต้องดึงสตาร์ท ใช้ได้ในพื้นที่ที่ไฟฟ้าเข้าไม่ถึง',
+      tags: ['Electrical Power', 'Solar', 'Hardware', 'ปวส.'],
+      tech: ['Solar Panel 12V 40W ×2', 'Solar Charger 10A', 'Battery 12V ×2 (24V)', 'DC Motor 24V 250W', 'Magnetic Contactor', 'Overload Relay', 'Circuit Breaker', 'Belt A-58 + Pulley'],
+      role: [
+        'ร่วมออกแบบโครงสร้างเครื่องเป็นโมเดล 3D และประกอบตัวเครื่องจริงกับเพื่อนร่วมทีม',
+        'ออกแบบและเดินวงจรควบคุมมอเตอร์ ON-OFF ด้วยเบรกเกอร์ โอเวอร์โหลด และแมกเนติกคอนแทคเตอร์ ในตู้ควบคุม',
+        'ติดตั้งระบบโซลาร์: แผงโซลาร์ 2 แผง โซลาร์ชาร์จเจอร์ และแบตเตอรี่ 2 ลูกต่ออนุกรมเป็น 24V',
+        'ทดสอบเทียบกับเครื่องเบนซิน เก็บค่าแรงดันระหว่างใช้งานและชาร์จ และทำแบบประเมินกับผู้เชี่ยวชาญ 20 คน',
+      ],
+      features: [
+        'ตัดได้ 4.5 ตร.ม. ใน 10 นาทีแรก มากกว่าเครื่องเบนซิน (4 ตร.ม.) และใน 30 นาทีได้เท่ากันที่ 10 ตร.ม.',
+        'ใช้งานต่อเนื่องได้ 2 ชั่วโมงโดยไม่ชาร์จ (แรงดันลดจาก 24.5V เหลือ 19.8V)',
+        'ชาร์จด้วยแสงอาทิตย์ 6 ชั่วโมง (แรงดันขึ้นจาก 19.8V เป็น 24.2V)',
+        'มีวงจรตัดเมื่อกระแสเกิน ไฟแสดงสถานะเครื่อง และหน้าจอบอกระดับแบตเตอรี่',
+        'ผลประเมินจากผู้เชี่ยวชาญ 20 คน: การออกแบบ 4.41 (ดี) · คู่มือการใช้งาน 4.58 (ดีมาก) · ผลที่ได้รับ 4.56 (ดีมาก)',
+      ],
+      team: 'ใบบุญ นันท์ตา · อนุวัตร นาควิบูลย์ · ที่ปรึกษา: อ.กมลวรรณ เรืองรัตน์สุนทร',
+      pipeline: [
+        ['แผงโซลาร์', '12V 40W × 2'],
+        ['Solar Charger', '10A'],
+        ['แบตเตอรี่', '12V × 2 → 24V'],
+        ['ตู้ควบคุม', 'CB · Overload · MC · ON-OFF'],
+        ['มอเตอร์ DC', '24V 250W → สายพาน A-58 → ใบมีด'],
+      ],
+      charts: [
+        { title: 'แรงดันแบตเตอรี่ระหว่างใช้งาน (ไม่ชาร์จ)', unit: 'V', x: ['13:00', '13:30', '14:00', '14:30', '15:00'], y: [24.5, 23.6, 22.7, 21.5, 19.8], min: 19, max: 25.6 },
+        { title: 'แรงดันแบตเตอรี่ระหว่างชาร์จด้วยโซลาร์', unit: 'V', x: ['0 ชม.', '1', '2', '3', '4', '5', '6 ชม.'], y: [19.8, 20.3, 20.8, 21.5, 22.6, 23.5, 24.2], min: 19, max: 25.6 },
+      ],
+      compare: {
+        head: ['เวลา', 'เบนซิน: พื้นที่', 'เบนซิน: น้ำมันเหลือ', 'โซลาร์: พื้นที่', 'โซลาร์: แรงดัน'],
+        rows: [
+          ['เริ่มต้น', '0 ตร.ม.', '1.0 ลิตร', '0 ตร.ม.', '25.2 V'],
+          ['10 นาที', '4 ตร.ม.', '0.7 ลิตร', '4.5 ตร.ม.', '24.0 V'],
+          ['20 นาที', '8 ตร.ม.', '0.5 ลิตร', '8 ตร.ม.', '23.5 V'],
+          ['30 นาที', '10 ตร.ม.', '0.3 ลิตร', '10 ตร.ม.', '22.0 V'],
+        ],
+      },
+      gallery: [
+        { src: 'images/solar-mower-3d.webp', cap: 'แบบโครงสร้าง 3D ของเครื่อง' },
+        { src: 'images/solar-mower-control.webp', cap: 'ตู้ควบคุมและแผงโซลาร์บนตัวเครื่อง' },
+        { src: 'images/solar-mower-build.webp', cap: 'ระหว่างประกอบแผงโซลาร์' },
+        { src: 'images/solar-mower-blade.webp', cap: 'ชุดมอเตอร์และฝาครอบใบมีด' },
+        { src: 'images/solar-mower-wiring.webp', cap: 'เดินสายตู้ควบคุม' },
+      ],
+    },
+  ],
+
+  education: [
+    { level: 'ปริญญาตรี', school: 'มหาวิทยาลัยศรีปทุม กรุงเทพฯ', detail: 'คณะเทคโนโลยีสารสนเทศ สาขาวิศวกรรมคอมพิวเตอร์', now: true },
+    { level: 'ปวส.', school: 'วิทยาลัยเทคโนโลยีไออาร์พีซี (IRPCT) ระยอง', detail: 'แผนกวิชาไฟฟ้ากำลัง สาขางานติดตั้งไฟฟ้า · โครงงาน: เครื่องตัดหญ้าพลังงานแสงอาทิตย์ (2565)', project: 'solar-mower' },
+    { level: 'มัธยมปลาย', school: 'โรงเรียนพัฒนเวชศึกษา ระยอง', detail: '' },
+  ],
+
+  /* icon = ชื่อไอคอนใน devicon (https://devicon.dev) ถ้าไม่มีจะแสดงตัวย่อแทน */
+  tech: [
+    { name: 'C', icon: 'c/c-original' },
+    { name: 'C++', icon: 'cplusplus/cplusplus-original' },
+    { name: 'Arduino', icon: 'arduino/arduino-original' },
+    { name: 'ESP32', abbr: 'ESP' },
+    { name: 'MQTT', abbr: 'MQ' },
+    { name: 'Raspberry Pi', icon: 'raspberrypi/raspberrypi-original' },
+    { name: 'SQL', icon: 'mysql/mysql-original' },
+    { name: 'Cisco', abbr: 'CCNA' },
+    { name: 'EasyEDA', abbr: 'PCB' },
+    { name: 'Solar PV', abbr: 'PV' },
+    { name: 'Motor Control', abbr: 'MC' },
+    { name: 'Git', icon: 'git/git-original' },
+    { name: 'GitHub', icon: 'github/github-original', invert: true },
+  ],
+
+  langs: [
+    ['ไทย', 'ภาษาหลัก', 100],
+    ['English', 'พอใช้', 55],
+    ['中文', 'พอใช้', 45],
+  ],
+};
